@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/def_list"
+        android:layout_marginLeft="10dp"
+        android:layout_width="48dp"
+        android:id="@+id/contactImagevIEW"
+        android:layout_height="48dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="48dp">
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        tools:text="Rajesh"
+        android:id="@+id/contactTextView"
+        android:textSize="20sp"
+        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/phoneNumberTextview"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            tools:text="9493962426"
+            android:textSize="15sp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>
