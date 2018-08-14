@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ContactsApp</string>
+    <string-array name="uploadImages">
+        <item>Pick from gallery</item>
+        <item>Click from camera</item>
+        <item>Remove image</item>
+    </string-array>
+
+    <string-array name="itemIds">
+        <item>gallery_image</item>
+        <item>camera_image</item>
+        <item>remove_image</item>
+    </string-array>
 </resources>

@@ -45,14 +45,17 @@
                     android:layout_centerInParent="true"
                     android:src="@drawable/contacts_def" />
 
-                <ImageView
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/contacts_def"
-                    android:layout_marginEnd="12dp"
                     android:layout_marginTop="190dp"
-                    android:src="@drawable/camera_add" />
+                    android:paddingLeft="24dp"
+                    android:id="@+id/pick_image"
+                    android:gravity="center"
+                    android:background="#607D8B"
+                    android:drawableLeft="@drawable/camera_add" />
 
 
             </RelativeLayout>

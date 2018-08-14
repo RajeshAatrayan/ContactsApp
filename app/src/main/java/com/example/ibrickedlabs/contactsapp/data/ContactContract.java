@@ -10,19 +10,16 @@ import com.example.ibrickedlabs.contactsapp.MainActivity;
  */
 
 public class ContactContract {
-    public  static  final  String CONTENT_AUTHORITY="com.example.ibrickedlabs.contactsapp";
-    public  static  final  Uri BASE_CONTENT_URI= Uri.parse("content://"+CONTENT_AUTHORITY);
-    public  static  final  String PATH_CONATACTS="contacts";
+    public static final String CONTENT_AUTHORITY = "com.example.ibrickedlabs.contactsapp";
+    public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
+    public static final String PATH_CONATACTS = "contacts";
 
     public ContactContract() {
     }
 
 
-
-
-
     public static class ContactEntry implements BaseColumns {
-        public  static  final  Uri CONTENT_URI=Uri.withAppendedPath(BASE_CONTENT_URI,PATH_CONATACTS);
+        public static final Uri CONTENT_URI = Uri.withAppendedPath(BASE_CONTENT_URI, PATH_CONATACTS);
 
         public static final String TABLE_NAME = "contacts";
         public static final String _ID = BaseColumns._ID;
@@ -32,6 +29,7 @@ public class ContactContract {
         public static final String Contact_Mode = "mode";
         public static final String Contact_Email = "email";
         public static final String Contact_Address = "address";
+        public static final String Contact_Image = "image";
 
         /**
          * Constants for the mode of the contacts
@@ -41,10 +39,11 @@ public class ContactContract {
         public static final int Mode_Main = 3;
         public static final int Mode_Home = 2;
 
-        public  static boolean isValidMode(int mode){
-            if(mode==Mode_Home || mode==Mode_Work || mode==Mode_Main || mode==Mode_Mobile)return  true;
-            else{
-                return  false;
+        public static boolean isValidMode(int mode) {
+            if (mode == Mode_Home || mode == Mode_Work || mode == Mode_Main || mode == Mode_Mobile)
+                return true;
+            else {
+                return false;
             }
         }
 

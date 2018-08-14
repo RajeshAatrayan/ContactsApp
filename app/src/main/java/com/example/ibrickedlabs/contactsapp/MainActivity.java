@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         //define the string projection first
         String[] projection = {
                 ContactEntry._ID,
+                ContactEntry.Contact_Image,
                 ContactEntry.Contact_FirstName,
                 ContactEntry.Contact_PhoneNumber
         };

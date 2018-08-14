@@ -3,6 +3,10 @@ package com.example.ibrickedlabs.contactsapp;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,18 +36,26 @@ public class ContactAdapter extends CursorAdapter {
         //ImageView imageView=(ImageView)view.findViewById(R.id.contactImagevIEW);
         TextView nameView = (TextView) view.findViewById(R.id.contactTextView);
         TextView phoneNumberView = (TextView) view.findViewById(R.id.phoneNumberTextview);
+        ImageView profImage = (ImageView) view.findViewById(R.id.contactImagevIEW);
 
 
         int nameColindex = cursor.getColumnIndex(ContactContract.ContactEntry.Contact_FirstName);
         int phnColindex = cursor.getColumnIndex(ContactContract.ContactEntry.Contact_PhoneNumber);
+        int imgColindex = cursor.getColumnIndex(ContactContract.ContactEntry.Contact_Image);
         String name = cursor.getString(nameColindex);
         String phone = cursor.getString(phnColindex);
+        final byte[] image = cursor.getBlob(imgColindex);
+        Bitmap bmp = BitmapFactory.decodeByteArray(image, 0, image.length);
+        RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(context.getResources(), bmp);
+        roundedBitmapDrawable.setCircular(true);
 
         if (TextUtils.isEmpty(name)) {
             name = "Unknown";
         }
         nameView.setText(name);
         phoneNumberView.setText(phone);
+        profImage.setImageDrawable(roundedBitmapDrawable);
+
 
     }
 }
